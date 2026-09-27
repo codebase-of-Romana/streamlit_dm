@@ -79,7 +79,7 @@ st.set_page_config(
     page_title="Praxisbeispiel Supply Chain | Bewerbung @dm",
     page_icon="◆",
     layout="wide",
-    initial_sidebar_state="expanded",
+    initial_sidebar_state="auto",
 )
 
 LOGO_PATH = "assets/dm_logo.png"

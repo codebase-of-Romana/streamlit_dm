@@ -68,7 +68,7 @@ st.set_page_config(
     page_title="Romana | Bewerbung Data Analyst/Scientist @dm",
     page_icon="◆",
     layout="wide",
-    initial_sidebar_state="expanded",
+    initial_sidebar_state="auto",
 )
 
 
