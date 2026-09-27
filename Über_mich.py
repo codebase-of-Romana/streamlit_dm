@@ -238,7 +238,6 @@ def praxisbeispiel_banner() -> None:
         "Netzwerkkarte, Nachfrageprognose, Liefertreue, CO2-Fußabdruck "
         "und einer Semantic-Layer-Demo."
     )
-    st.page_link("pages/1_Praxisbeispiel.py", label="Zum Praxisbeispiel", icon=":material/arrow_forward:")
 
 # ---------------------------------------------------------------------------
 # HERO
