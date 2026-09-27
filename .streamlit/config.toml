@@ -1,0 +1,8 @@
+[theme]
+# ---- dm-CI Farbwelt, Lila als starke Sekundär-/Akzentfarbe -----------------
+primaryColor = "#5B3FA0"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F4F1FC"
+textColor = "#1F2430"
+font = "sans serif"
+base = "light"
