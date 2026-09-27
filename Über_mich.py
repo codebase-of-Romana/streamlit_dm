@@ -244,7 +244,7 @@ with col_hero:
         <div class="role">{ROLLE}</div>
         <div class="rule"></div>
         <div class="hero-facts">
-            <div class="fact"><div class="flabel">Berufserfahrung</div><div class="fvalue">&gt;6 Jahre in Data Analytics &amp; Business Intelligence</div></div>
+            <div class="fact"><div class="flabel">Berufserfahrung</div><div class="fvalue">&gt;6 Jahre in Data Analytics &amp; BI</div></div>
             <div class="fact"><div class="flabel">Ausbildung</div><div class="fvalue">Bachelor &amp; Master an der FH Hagenberg</div></div>
             <div class="fact"><div class="flabel">Kernthemen</div><div class="fvalue">Subscription · CRM · Operations</div></div>
         </div>
