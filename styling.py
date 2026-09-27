@@ -90,6 +90,7 @@ def inject_base_css() -> None:
         border-radius: 4px 20px 20px 4px;
         padding: 2.5rem 2.9rem 2rem 2.9rem;
         box-shadow: 0 20px 44px -30px rgba(30,20,70,0.4);
+        container-type: inline-size;
     }}
     .hero .kicker {{ font-size:0.76rem; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:{DM_LILA_DUNKEL}; margin-bottom:0.9rem; display:block; }}
     .hero h1 {{ font-size:2.2rem; font-weight:700; color:{DM_BLAU_DUNKEL}; margin:0 0 0.3rem 0; }}
@@ -101,6 +102,17 @@ def inject_base_css() -> None:
     .hero-facts .fact:first-child {{ border-left:none; padding-left:0; }}
     .hero-facts .flabel {{ font-size:0.7rem; text-transform:uppercase; letter-spacing:0.05em; color:{DM_LILA_DUNKEL}; font-weight:700; }}
     .hero-facts .fvalue {{ font-size:0.92rem; font-weight:600; color:{DM_TEXT}; margin-top:0.28rem; }}
+
+    /* ---- Schmale Karte: hero-facts stapeln einheitlich statt seitlich
+       getrennt. Container-Query statt Viewport-Media-Query, weil die
+       tatsächliche Breite dieser Karte nicht am Bildschirm hängt, sondern
+       auch von Sidebar-Zustand und der Foto-Spalte daneben abhängt - beides
+       ändert sich unabhängig vom Viewport. ---- */
+    @container (max-width: 768px) {{
+        .hero-facts {{ flex-direction:column; }}
+        .hero-facts .fact {{ border-left:none; padding:0.9rem 0 0 0; border-top:1px solid #ECE9F9; }}
+        .hero-facts .fact:first-child {{ padding-top:0; border-top:none; }}
+    }}
 
     /* ---- Wellen-Platzhalter ---- */
     .wave-divider {{ margin: -0.6rem 0 2rem 0; line-height:0; }}
@@ -227,6 +239,14 @@ def inject_base_css() -> None:
     .radar-label {{ position:absolute; font-size:0.78rem; font-weight:600; color:{DM_TEXT}; text-align:center; white-space:nowrap; line-height:1.3; }}
     .radar-value {{ font-size:0.72rem; font-weight:700; color:{DM_LILA_DUNKEL}; }}
 
+    /* ---- Schmale Bildschirme: "Stakeholder-Kommunikation" darf an der
+       vorgesehenen Stelle (<wbr> im Label-Text) umbrechen, statt die Seite
+       horizontal scrollbar zu machen. Andere, kürzere Labels bleiben unter
+       100px ohnehin einzeilig. ---- */
+    @media (max-width: 500px) {{
+        .radar-label {{ white-space:normal; max-width:100px; }}
+    }}
+
     /* ---- Footer: Kontakt & Download ---- */
     .footer-divider {{ border:none; border-top:1px solid #E9E6F5; margin:2.2rem 0 1.6rem 0; }}
     .contact-bar {{ display:flex; gap:0.8rem; flex-wrap:wrap; align-items:center; }}
@@ -265,6 +285,10 @@ def inject_base_css() -> None:
     .st-key-narrativ-1 [data-testid="stExpander"] {{ border-left: 4px solid {DM_LILA_DUNKEL} !important; }}
     .st-key-narrativ-2 [data-testid="stExpander"] {{ border-left: 4px solid {DM_LILA_DUNKEL} !important; }}
     .st-key-narrativ-3 [data-testid="stExpander"] {{ border-left: 4px solid {DM_BLAU} !important; }}
+
+    /* ---- Link im Praxisbeispiel-Banner (st.info) ---- */
+    [data-testid="stAlert"] a {{ color: {DM_LILA_DUNKEL} !important; font-weight:700; text-decoration:underline; }}
+    [data-testid="stAlert"] a:hover {{ color: {DM_BLAU_DUNKEL} !important; }}
 
     /* ---- Scenario-Karten (Praxisbeispiel-Seite) ---- */
     .scenario-intro {{

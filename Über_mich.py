@@ -229,6 +229,17 @@ def split(*ratios, gap="large"):
 def split_n(n, gap="medium"):
     return split(*([1] * n), gap=gap)
 
+
+def praxisbeispiel_banner() -> None:
+    """Verweis auf das Praxisbeispiel - identisch am Ende jedes Tabs."""
+    st.info(
+        "Im linken Menü befindet sich der Punkt "
+        "[**Praxisbeispiel**](/Praxisbeispiel): mit fünf Szenarien — "
+        "Netzwerkkarte, Nachfrageprognose, Liefertreue, CO2-Fußabdruck "
+        "und einer Semantic-Layer-Demo."
+    )
+    st.page_link("pages/1_Praxisbeispiel.py", label="Zum Praxisbeispiel", icon=":material/arrow_forward:")
+
 # ---------------------------------------------------------------------------
 # HERO
 # ---------------------------------------------------------------------------
@@ -244,7 +255,7 @@ with col_hero:
         <div class="role">{ROLLE}</div>
         <div class="rule"></div>
         <div class="hero-facts">
-            <div class="fact"><div class="flabel">Berufserfahrung</div><div class="fvalue">&gt;6 Jahre in Data Analytics &amp; BI</div></div>
+            <div class="fact"><div class="flabel">Berufserfahrung</div><div class="fvalue">&gt;6 Jahre in Data Analytics &amp; Business Intelligence</div></div>
             <div class="fact"><div class="flabel">Ausbildung</div><div class="fvalue">Bachelor &amp; Master an der FH Hagenberg</div></div>
             <div class="fact"><div class="flabel">Kernthemen</div><div class="fvalue">Subscription · CRM · Operations</div></div>
         </div>
@@ -412,11 +423,14 @@ with tab_ueber_mich:
                 gibt, wirklich anzukommen, und die Gewissheit, mit dm einen
                 <b>sicheren Arbeitgeber</b> zu wählen. Am meisten reizt mich
                 aber die <b>innovative Entwicklungsumgebung</b> im neuen
-                SCDA-Team — genau dort möchte ich mitwirken, dass Kolleg:innen 
+                SCDA-Team — genau dort möchte ich mitwirken, dass Kolleg:innen
                 data-driven Entscheidungen treffen können.
             </p>
         </div>
         """)
+
+    st.write("")
+    praxisbeispiel_banner()
 
 # ---------------------------------------------------------------------------
 # TAB: WERDEGANG
@@ -489,6 +503,10 @@ with tab_werdegang:
                 <div class="inst">{a['inst']}</div>
             </div>
             """)
+
+    st.write("")
+    st.write("")
+    praxisbeispiel_banner()
 
 # ---------------------------------------------------------------------------
 # TAB: SKILLS & TOOLS
@@ -704,7 +722,7 @@ with tab_skills:
     _RADAR_ACHSEN = [
         ("SQL", 4),
         ("Dashboarding", 5),
-        ("Stakeholder-Kommunikation", 5),
+        ("Stakeholder-<wbr>Kommunikation", 5),
         ("Data Modeling", 4),
         ("Python", 4),
     ]
@@ -759,14 +777,7 @@ with tab_skills:
     </div>
     """)
     st.write("")
-
-
-    st.info(
-        "Im linken Menü befindet sich der Punkt **Praxisbeispiel**: "
-        "mit fünf Szenarien — Netzwerkkarte, Nachfrageprognose, "
-        "Liefertreue, CO2-Fußabdruck und einer Semantic-Layer-Demo."
-    )
-    st.page_link("pages/1_Praxisbeispiel.py", label="Zum Praxisbeispiel", icon=":material/arrow_forward:")
+    praxisbeispiel_banner()
 
 # ---------------------------------------------------------------------------
 # FOOTER: Kontakt-Leiste, CV-Download & Kompakt-Toggle
