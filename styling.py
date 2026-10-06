@@ -110,7 +110,10 @@ def inject_base_css() -> None:
        ändert sich unabhängig vom Viewport. ---- */
     @container (max-width: 768px) {{
         .hero-facts {{ flex-direction:column; }}
-        .hero-facts .fact {{ border-left:none; padding:0.9rem 0 0 0; border-top:1px solid #ECE9F9; }}
+        /* flex-basis:240px aus der Reihen-Ansicht gilt in der Spalten-Ansicht
+           sonst als Mindesthöhe (statt -breite) - jeder Fakt wird dadurch auf
+           240px aufgebläht. Hier auf den tatsächlichen Inhalt zurücksetzen. */
+        .hero-facts .fact {{ flex:0 1 auto; border-left:none; padding:0.9rem 0 0 0; border-top:1px solid #ECE9F9; }}
         .hero-facts .fact:first-child {{ padding-top:0; border-top:none; }}
     }}
 
