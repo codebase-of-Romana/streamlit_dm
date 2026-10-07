@@ -580,6 +580,7 @@ with tab_skills:
             <span class="tag">AWS S3 (Grundkenntnisse)</span>
             <span class="tag">dbt</span>
             <span class="tag">Airflow</span>
+            <span class="tag">Snowflake (Grundkenntnisse)</span>
             <span class="tag">Adverity</span>
         </div>
         """)
